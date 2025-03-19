@@ -1,8 +1,9 @@
 '''
-A table driven todo list.
+A table-driven todo list. 
+This version uses a command processor table to handle user commands.
+It allows for easier expansion and modification of the command handling logic.
 '''
 
-# ...existing code...
 from dataclasses import dataclass
 from typing import Callable
 
