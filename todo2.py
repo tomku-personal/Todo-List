@@ -24,7 +24,7 @@ def list_todos():
     if todos:
         print("Todo list items:")
         for i, todo in enumerate(todos):
-            print(f"{i+1} - {todo}")  # enumerate starts from 1 for user-friendliness
+            print(f"{i+1}-{todo}")  # enumerate starts from 1 for user-friendliness
     else:
         print("Todo list is empty.")
 
