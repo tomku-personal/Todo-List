@@ -70,6 +70,17 @@ def remove_todo():
     else:
         print("Invalid index.")
 
+def complete_todo():
+    if not todos:
+        print("Todo list is empty.")  
+    list_todos()
+    index = int(input("Enter the number of the todo item completed: ")) - 1
+    if 0 <= index < len(todos):
+        completed = todos.pop(index)
+        print(f"Completed todo: {completed}")
+    else:
+        print("Invalid index.")
+
 def quit_todo():
     print("Exiting the todo list. Goodbye!")
     global exit  # access the global exit variable
@@ -81,6 +92,7 @@ command_processors = [
     CommandProcessor("list", list_todos),
     CommandProcessor("show", list_todos),  # alias for list
     CommandProcessor("remove", remove_todo),
+    CommandProcessor("complete", complete_todo),
     CommandProcessor("clear", clear_todos),
     CommandProcessor("edit", edit_todo),
     CommandProcessor("quit", quit_todo),
