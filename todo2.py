@@ -99,17 +99,21 @@ command_processors = [
     CommandProcessor("exit", quit_todo)]  # alias for quit
 commands = [cp.command for cp in command_processors]
 
-exit = False  # control variable for the main loop
 
-while not exit:
-    command = input(f"Enter command ({', '.join(commands)}): ").strip().lower()
-    if command in commands:
-        for cp in command_processors:
-            if cp.command == command:
-                cp.processor()  # call the corresponding processor function
-    else:
-        print("Invalid command. Please try again.")
+def main():
+    exit = False  # control variable for the main loop
+    while not exit:
+        command = input(f"Enter command ({', '.join(commands)}): ").strip().lower()
+        if command in commands:
+            for cp in command_processors:
+                if cp.command == command:
+                    cp.processor()  # call the corresponding processor function
+        else:
+            print("Invalid command. Please try again.")
 
+
+if __name__ == '__main__':
+    main()
 
 
 
